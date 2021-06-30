@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Header, Image, Modal, Form } from 'semantic-ui-react'
 
+import SemanticDatepicker from 'react-semantic-ui-datepickers';
+import 'react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css';
+
 import GenderDropdown from '../../commons/dropdowns/GenderDropdown';
+import TeamDropdown from '../../commons/dropdowns/TeamDropdown';
 
 function RegistrationPopup() {
-    const [open, setOpen] = React.useState(false)
+    const [open, setOpen] = useState(false)
 
     //formData
-    const [form, setForm] = React.useState({ name: "", gender: "" })
+    const [form, setForm] = useState({ name: "", gender: "" })
 
 
     const onChange = (e, target) => {
@@ -31,12 +35,14 @@ function RegistrationPopup() {
                             label='Name'
                             placeholder='Insert name here'
                         />
-                        <Form.Input
-                            label='Birth Date'
-                            placeholder='Insert name here'
-                        />
+
                         <GenderDropdown
                             value={form.gender}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <SemanticDatepicker
+                            label='Birth Date'
                         />
                     </Form.Group>
                     <Form.Input
@@ -51,6 +57,7 @@ function RegistrationPopup() {
                         label='Start Date'
                         placeholder='MM/YYYY'
                     />
+                    <TeamDropdown />
                 </Form>
 
             </Modal.Content>

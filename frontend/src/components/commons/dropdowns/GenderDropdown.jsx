@@ -8,7 +8,7 @@ const genderOptions = [
     { key: 0, value: 'NOT_KNOW', text: 'Not known' },
     { key: 1, value: 'MALE', text: 'Male' },
     { key: 2, value: 'FEMALE', text: 'Female' },
-    { key: 3, value: 'PREFER_NOT_TO_SAY', text: 'Prefer Not to say' },
+    { key: 3, value: 'PREFER_NOT_TO_SAY', text: 'Prefer not to say' },
     { key: 4, value: 'OTHER', text: 'Other' },
 ]
 
