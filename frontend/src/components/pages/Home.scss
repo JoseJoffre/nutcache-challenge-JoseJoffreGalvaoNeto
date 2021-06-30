@@ -1,0 +1,19 @@
+.Home {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.buttons {
+  a {
+    margin: 10px;
+  }
+}
+
+.Welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
