@@ -1,0 +1,6 @@
+{
+    "prettier.configPath": "frontend\\src\\.prettierrc",
+    "prettier.jsxBracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.tabWidth": 4
+}
