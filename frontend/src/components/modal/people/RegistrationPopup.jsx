@@ -9,7 +9,6 @@ import moment from 'moment';
 
 
 const RegistrationPopup = ({ visible, onCreate, onCancel, data }) => {
-    console.log('DATA', data)
 
     const layout = {
         labelCol: {

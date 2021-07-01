@@ -42,11 +42,11 @@ const employeesReducer = (state = initialState, action) => {
 
         //GET ONE employee    
         case EmployeeActionsTypes.UPDATE_EMPLOYEE_REQUEST:
+            console.log('AAAAAAAAAAAA', action.payload);
             return {
                 ...state,
                 employees: {
                     ...state.employees,
-                    payload: state.payload,
                     loading: false
                 }
             }
