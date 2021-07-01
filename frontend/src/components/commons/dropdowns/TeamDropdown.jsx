@@ -1,23 +1,25 @@
 import React from 'react';
-import { Form } from 'semantic-ui-react';
 
-const TeamOptions = [
-    { key: 0, value: 'NONE', text: 'None' },
-    { key: 1, value: 'MOBILE', text: 'Mobile' },
-    { key: 2, value: 'FRONTEND', text: 'Frontend' },
-    { key: 3, value: 'BACKEND', text: 'Backend' },
-]
-
+import { Form, Select } from 'antd';
+const { Option } = Select;
+;
 const TeamDropdown = props => (
 
-    <Form.Dropdown
-        placeholder='Select Team'
-        search
-        selection
+    <Form.Item
+        name='teamID'
         label='Team'
-        value={props.value}
-        options={TeamOptions}
-    />
+    >
+        <Select
+            placeholder='Select Team'
+            allowClear
+        >
+            <Option value={null}>None</Option>
+            <Option value={1}>Frontend</Option>
+            <Option value={2}>Backend</Option>
+            <Option value={3}>Mobile</Option>
+        </Select>
+    </Form.Item>
 )
+
 
 export default TeamDropdown;

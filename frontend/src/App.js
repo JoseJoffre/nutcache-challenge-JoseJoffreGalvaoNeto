@@ -1,16 +1,16 @@
 import React from "react";
-import MainHeader from "./components/layout/MainHeader";
+import Header from "./components/layout/Header";
 import Content from "./components/layout/Content";
-import { BrowserRouter as Router } from "react-router-dom";
+import {Layout} from "antd";
+
+import "./App.less";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <MainHeader />
+    <Layout>
+        <Header />
         <Content />
-      </Router>
-    </div>
+    </Layout>
   );
 }
 
