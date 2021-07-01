@@ -65,7 +65,8 @@ router.put("/employees/:id", async (req, res) => {
       cpf,
       customizeGender,
   };
-  const result = await EmployeeController.update(employee, id);
+    const result = await EmployeeController.update(employee, id);
+    console.log("AAAA",result);
   res.json(result);
 
 });

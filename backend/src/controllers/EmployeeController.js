@@ -95,8 +95,9 @@ class EmployeeController {
         };
         
         const result = await Employee.update(employee, id);
-        console.log("RESULT", result);
-      return 
+          console.log("RESULT", result);
+          const updated = await Employee.list();
+          return updated;
     }
     return {
       msg: "Employee not found",
