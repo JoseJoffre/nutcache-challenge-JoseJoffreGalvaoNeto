@@ -3,6 +3,6 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors()).use(express.json()).use("/api", require("./routes/employee"));
+app.use(cors()).use(express.json()).use("/api", require("./src/routes/employee"));
 
 module.exports = app;
