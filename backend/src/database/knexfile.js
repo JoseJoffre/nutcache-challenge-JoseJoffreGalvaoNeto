@@ -6,9 +6,9 @@ const { env } = process;
 module.exports = {
   client: "mysql2",
   connection: {
-    host: "XXXXXX",
-    user: "XXXXX",
-    password: "XXXXXXX",
+    host: "127.0.0.1",
+    user: "root",
+    password: "Zmhx8wqc.93",
     database: "nutcache",
   },
   migrations: {

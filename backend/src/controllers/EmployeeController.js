@@ -57,7 +57,6 @@ class EmployeeController {
         created: now,
         updated: now,
     };
-    console.log('INSERT', insert)
     const userId = await Employee.create(insert);
 
 
@@ -79,9 +78,24 @@ class EmployeeController {
 
   async update(insert, id) {
     const user = await Employee.getByID(id);
-    if (!isEmpty(user)) {
-        const result = await Employee.update(insert, id);
-        console.log(result);
+      if (!isEmpty(user)) {
+
+        const { name,  cpf, birthDate, email, startDate, teamID, gender, customizeGender } = insert;
+        const now = new Date();
+        const employee = {
+            name: name,
+            email: email,
+            gender: gender,
+            customizeGender: customizeGender,
+            cpf: cpf,
+            teamID:teamID,
+            birthDate: DateFns.format(DateFns.parseISO(birthDate), "yyyy-MM-dd'T'HH:mm:ss"),
+            startDate: DateFns.format(DateFns.parseISO(startDate), "yyyy-MM-dd'T'HH:mm:ss"),
+            updated: now,
+        };
+        
+        const result = await Employee.update(employee, id);
+        console.log("RESULT", result);
       return 
     }
     return {

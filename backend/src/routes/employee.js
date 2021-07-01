@@ -7,7 +7,6 @@ const _ = require("lodash");
 router.get("/employees", async (req, res) => {
     
     const list = await EmployeeController.list();
-    console.log("CCCCCC",list)
   res.json(list);
 });
 
@@ -15,7 +14,6 @@ router.get("/employees", async (req, res) => {
 
 router.get("/employee/:id", async (req, res) => {
   const id = _.get(req, "params.id", null);
-
   const employee = await EmployeeController.getByID(id);
   res.json(employee);
 });
@@ -56,7 +54,7 @@ router.put("/employees/:id", async (req, res) => {
     const teamID = _.get(req, "body.teamID", null)
     const cpf = _.get(req, "body.cpf", null);
     const birthDate= _.get(req, "body.birthDate", null);
-
+   
   const employee = {
       name,
       email,
@@ -69,7 +67,7 @@ router.put("/employees/:id", async (req, res) => {
   };
   const result = await EmployeeController.update(employee, id);
   res.json(result);
-  res.status(result.status);
+
 });
 
 router.delete("/employee/:id", async (req, res) => {
