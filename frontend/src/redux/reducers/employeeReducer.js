@@ -6,12 +6,6 @@ const initialState = {
         error: null,
         loading: false,
         
-    },
-    employee: {
-        payload: {},
-        error: null,
-        loading: false,
-        deleteSuccess: false,
     }
 
 }
@@ -51,16 +45,17 @@ const employeesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 employees: {
-                    ...state.employee,
-                    loading: true
+                    ...state.employees,
+                    payload: state.payload,
+                    loading: false
                 }
             }
         case EmployeeActionsTypes.UPDATE_EMPLOYEE_SUCCESS:
-
+            
             return {
                 ...state,
                 employees: {
-                    ...state.employee,
+                    ...state.employees,
                     loading: false
                 }
             }

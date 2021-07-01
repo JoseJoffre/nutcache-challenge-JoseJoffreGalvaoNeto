@@ -72,10 +72,12 @@ export const deleteEmployee = id =>
             DELETE_EMPLOYEE_FAILURE
         ]
     })
-export const updateEmployee = (employee) =>
+export const updateEmployee = (employee, id) =>
     createAction({
-        endpoint: `/api/employee/${employee.id}`,
+        endpoint: `/api/employees/${id}`,
         method: 'PUT',
+        body: JSON.stringify(employee),
+        headers: { 'Content-Type': 'application/json' },
         types: [
             UPDATE_EMPLOYEE_REQUEST,
             UPDATE_EMPLOYEE_SUCCESS,

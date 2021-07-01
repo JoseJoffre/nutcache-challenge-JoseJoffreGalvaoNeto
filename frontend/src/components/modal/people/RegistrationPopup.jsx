@@ -25,7 +25,7 @@ const RegistrationPopup = ({ visible, onCreate, onCancel, data }) => {
     }
     const validateCPF = (e) => {
         let testCPF = e.target.value
-        console.log(testCPF);
+
         testCPF = testCPF.replace(/[^\d]+/g, "");
         if (testCPF == "") return { validateStatus: 'error', errorMsg: 'MUST BE A VALID CPF!' };
         // Banlist
@@ -69,7 +69,7 @@ const RegistrationPopup = ({ visible, onCreate, onCancel, data }) => {
     return (
         <Modal
             visible={visible}
-            title="Create a new collection"
+            title="Create new employee"
             okText="Create"
             cancelText="Cancel"
             onCancel={onCancel}
@@ -91,12 +91,12 @@ const RegistrationPopup = ({ visible, onCreate, onCancel, data }) => {
                 initialValues={{
                     name: data?.name,
                     gender: data?.gender,
-                    birthDate: moment(data?.birthDate, 'YYYY-MM-DD'),
+                    birthDate: moment(data?.birthDate, 'YYYY-MM-DD') || null,
                     customizeGender: data?.customizeGender,
                     email: data?.email,
                     teamID: data?.teamID,
                     cpf: data?.cpf,
-                    startDate: moment(data?.startDate, 'YYYY-MM-DD')
+                    startDate: moment(data?.startDate, 'YYYY-MM-DD') || null,
                 }}
                 name="control-hooks">
                 <Form.Item

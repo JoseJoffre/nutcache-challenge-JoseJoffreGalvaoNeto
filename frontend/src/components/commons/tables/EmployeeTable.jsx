@@ -11,6 +11,7 @@ import RegistrationPopup from "../../modal/people/RegistrationPopup";
 const EmployeeTable = () => {
     const [employee, setEmployee] = useState(false);
     const [sortedInfo, setSortedInfo] = useState({ columnKey: null });
+    const [edit, setEdit] = useState(null);
 
     const dispatch = useDispatch();
 
@@ -36,10 +37,11 @@ const EmployeeTable = () => {
     };
     const handleEdit = (employee) => {
         setEmployee(employee);
+        setEdit(employee.id);
     }
-    const handleCreateEdit = (employee) => {
-        console.log(employee);
-        dispatch(updateEmployee(employee))
+    const handleCreateEdit = (employee, id) => {
+        dispatch(updateEmployee(employee, id))
+        setEmployee(false)
     }
     const handleDelete = (id) => {
         if (window.confirm('Are you sure about that?')) {
@@ -100,7 +102,7 @@ const EmployeeTable = () => {
             <Table columns={columns} dataSource={employees} rowKey='id' onChange={handleChange} />
             <RegistrationPopup
                 visible={!!employee}
-                onCreate={handleCreateEdit}
+                onCreate={e => handleCreateEdit(e, edit)}
                 onCancel={() => {
                     setEmployee(undefined);
                 }}

@@ -16,7 +16,6 @@ const Home = props => {
     const [visible, setVisible] = useState(false);
 
     const onCreate = (values) => {
-        console.log('Received values of form: ', values);
         dispatch(createEmployees(values));
         setVisible(false);
     };
@@ -30,7 +29,7 @@ const Home = props => {
                     setVisible(true);
                 }}
             >
-                New Collection
+                New Employee
             </Button>
             <RegistrationPopup
                 visible={visible}
